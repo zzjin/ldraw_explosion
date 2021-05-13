@@ -1,0 +1,5 @@
+*.gob
+io_*.go
+/bin/lp_*
+/tests/*
+!/**/.gitkeep

@@ -14,6 +14,10 @@ Download prebuilt one-file-binary for your platform, and drag&drop ldr file on i
 | ------------- | ------------- | ------------- |
 |  ![origin](docs/car_origin.png) | => | ![explosion](docs/car_explosion.png) |
 
+### Usage
+
+https://user-images.githubusercontent.com/679757/118230501-5bb15180-b4c0-11eb-9e52-a0d2ca91cafd.mp4
+
 ### TODO:
 1. [ ] code base update.
 2. [ ] add support of broken unoffical parts.

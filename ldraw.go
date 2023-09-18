@@ -15,20 +15,43 @@ import (
 const (
 	PLocation     = `p/`
 	PartsLocation = `parts/`
+
+	UnOfficialLocation = `UnOfficial/`
+)
+
+var (
+	p4Location     = PLocation + `4/`
+	p8Location     = PLocation + `8/`
+	p48Location    = PLocation + `48/`
+	partsSLocation = PartsLocation + `s/`
+	pLocations     = []string{
+		PLocation,
+		p4Location,
+		p8Location,
+		p48Location,
+		PartsLocation,
+		partsSLocation,
+	}
 )
 
 // getSubFileRealLocation getSubFileRealLocation
 func getSubFileRealLocation(filePath, ldrawRoot string) string {
 	filePath = strings.Replace(filePath, "\\", "/", -1)
 
-	curr := filepath.Clean(ldrawRoot + PartsLocation + filePath)
-	if _, err := os.Stat(curr); err == nil {
-		return curr
+	for _, p := range pLocations {
+		cp := filepath.Clean(ldrawRoot + p + filePath)
+		if _, err := os.Stat(cp); err == nil {
+			return cp
+		}
 	}
 
-	pLo := filepath.Clean(ldrawRoot + PLocation + filePath)
-	if _, err := os.Stat(pLo); err == nil {
-		return pLo
+	// Additional check UnOfficial dir path
+	unOfficialRoot := ldrawRoot + UnOfficialLocation
+	for _, p := range pLocations {
+		cp := filepath.Clean(unOfficialRoot + p + filePath)
+		if _, err := os.Stat(cp); err == nil {
+			return cp
+		}
 	}
 
 	log.Fatalf("sub file not found: %s\n", filePath)

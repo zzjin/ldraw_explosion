@@ -14,6 +14,11 @@ Download prebuilt one-file-binary for your platform, and drag&drop ldr file on i
 | ------------- | ------------- | ------------- |
 |  ![origin](docs/car_origin.png) | => | ![explosion](docs/car_explosion.png) |
 
+### Usage
+
+<!-- ![usage](docs/usage.webm.mp4) -->
+[usage.webm](https://github.com/zzjin/ldraw_explosion/assets/679757/ab832487-d0a4-4731-b275-8ccf780cbf0f)
+
 ### TODO:
 1. [ ] code base update.
 2. [ ] add support of broken unoffical parts.
